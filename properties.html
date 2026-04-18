@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Properties | Trinity CW</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="images/logo.png" alt="Trinity CW Logo">
+        <span>Trinity CW</span>
+      </div>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <main class="properties-page">
+    <section class="properties-hero">
+      <div class="container">
+        <p class="page-label">Our Listings</p>
+        <h1>Explore Premium Properties</h1>
+        <p class="page-subtext">
+          Discover carefully selected homes in prime locations designed for modern living.
+        </p>
+      </div>
+    </section>
+
+    <section class="properties-controls">
+      <div class="container">
+        <div class="properties-search-wrap">
+          <div class="properties-search">
+            <i class="fas fa-search"></i>
+            <input type="text" id="propertySearch" placeholder="Search properties">
+          </div>
+
+          <button class="filter-btn" aria-label="Open filters">
+            <i class="fas fa-sliders-h"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="properties-listing">
+      <div class="container">
+        <div class="results-bar">
+          <p id="resultsCount">Showing 0 properties</p>
+        </div>
+
+        <div class="properties-grid-page" id="propertiesGridPage"></div>
+
+        <div id="noResultsMessage" style="display: none; text-align: center; padding: 30px 0;">
+          <p>No properties found.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Trinity CW</h3>
+        <p>Premium real estate solutions tailored for modern living.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Lagos, Nigeria</p>
+        <p>+234 802 678 9221</p>
+        <p>trinitycwhomes@gmail.com</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="https://wa.me/2349030106001"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://x.com/trinity_CW1"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/share/17D8pCnuFG/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Trinity CW. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="filter-popup" id="filterPopup">
+    <div class="filter-header">
+      <h3>Filters</h3>
+      <button class="close-filter" id="closeFilter" aria-label="Close filters">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="filter-content">
+      <div class="filter-group">
+        <h4>Listing Type</h4>
+        <div class="filter-options single-select" data-filter-group="listing">
+          <button type="button" data-value="shortlet">Shortlet</button>
+          <button type="button" data-value="rent">For Rent</button>
+          <button type="button" data-value="sale">For Sale</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Property Type</h4>
+        <div class="filter-options single-select" data-filter-group="type">
+          <button data-value="apartment">Apartment</button>
+          <button data-value="duplex">Duplex</button>
+          <button data-value="home">Home</button>
+          <button data-value="land">Land</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price Range</h4>
+        <div class="price-inputs">
+          <input type="number" id="minPrice" placeholder="Min price">
+          <input type="number" id="maxPrice" placeholder="Max price">
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Bedrooms</h4>
+        <div class="filter-options single-select" data-filter-group="bedrooms">
+          <button type="button" data-value="1">1+</button>
+          <button type="button" data-value="2">2+</button>
+          <button type="button" data-value="3">3+</button>
+          <button type="button" data-value="4">4+</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4>Sort By</h4>
+        <select id="sortBy">
+          <option value="default">Newest</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="reset-btn" id="resetFilters" type="button">Reset</button>
+      <button class="apply-btn" id="applyFilters" type="button">Apply Filters</button>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

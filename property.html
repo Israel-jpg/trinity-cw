@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Details | Trinity CW</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="images/logo.png" alt="Trinity CW Logo">
+        <span>Trinity CW</span>
+      </div>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <main class="property-page">
+    <section class="property-hero reveal">
+      <div class="container">
+        <div class="property-slider">
+          <button class="slider-btn prev" id="prevBtn" aria-label="Previous image">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="property-main-image">
+            <img src="images/house1.avif" alt="Property Image" id="propertyImage">
+            <div class="image-counter" id="imageCounter">1 / 1</div>
+          </div>
+
+          <button class="slider-btn next" id="nextBtn" aria-label="Next image">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="slider-thumbnails"></div>
+      </div>
+    </section>
+
+    <section class="property-summary reveal">
+      <div class="container">
+        <div class="property-top">
+          <div class="property-main-info">
+            <p class="property-price" id="propertyPrice">₦120,000,000</p>
+            <h1 id="propertyTitle">Modern Family Duplex</h1>
+            <p class="property-address" id="propertyLocation">
+              <i class="fas fa-location-dot"></i>
+              Lekki, Lagos
+            </p>
+          </div>
+        </div>
+
+        <div class="property-meta">
+          <div class="meta-item reveal">
+            <i class="fas fa-bed"></i>
+            <span><span id="propertyBedrooms">4</span> Bedrooms</span>
+          </div>
+
+          <div class="meta-item reveal">
+            <i class="fas fa-bath"></i>
+            <span><span id="propertyBathrooms">3</span> Bathrooms</span>
+          </div>
+
+          <div class="meta-item reveal">
+            <i class="fas fa-ruler-combined"></i>
+            <span id="propertySize">2400 sqft</span>
+          </div>
+
+          <div class="meta-item reveal">
+            <i class="fas fa-house"></i>
+            <span id="propertyType">Duplex</span>
+          </div>
+
+          <div class="meta-item reveal">
+            <i class="fas fa-tag"></i>
+            <span id="propertyListing">Sale</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="property-content">
+      <div class="container property-layout">
+        <div class="property-left">
+
+          <div class="property-section reveal">
+            <h2>About the Home</h2>
+            <p id="propertyDescription">
+              This beautifully finished duplex offers a premium living experience in one of Lagos’s most desirable neighborhoods.
+            </p>
+          </div>
+
+          <div class="property-section property-details-modern reveal">
+            <h2>Property Details</h2>
+
+            <div class="details-category">Interior</div>
+
+            <div class="feature-block reveal">
+              <h3>Bedrooms & Bathrooms</h3>
+              <ul>
+                <li>Bedrooms: <span id="detailsBedrooms">4</span></li>
+                <li>Bathrooms: <span id="detailsBathrooms">3</span></li>
+                <li>Full bathrooms: <span id="detailsFullBathrooms">3</span></li>
+              </ul>
+            </div>
+
+            <div class="feature-block reveal">
+              <h3>Interior Features</h3>
+              <ul>
+                <li id="propertyInterior">Modern interior finishing with bright living spaces, fitted kitchen, spacious bedrooms, and quality materials throughout.</li>
+              </ul>
+            </div>
+
+            <div class="details-category">Parking</div>
+
+            <div class="feature-block reveal">
+              <h3>Parking Features</h3>
+              <ul>
+                <li id="propertyParking">2 covered parking spaces in a secure gated compound.</li>
+              </ul>
+            </div>
+
+            <div class="details-category">Exterior</div>
+
+            <div class="feature-block reveal">
+              <h3>Construction & Lot</h3>
+              <ul>
+                <li>Property type: <span id="detailsType">Duplex</span></li>
+                <li>Listing type: <span id="detailsListing">Sale</span></li>
+                <li>Size: <span id="detailsSize">2400 sqft</span></li>
+                <li id="propertyExterior">Contemporary duplex exterior with clean lines, paved surroundings, and a secure gated entrance.</li>
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+
+        <aside class="property-sidebar reveal">
+          <div class="agent-card reveal">
+            <h3>Contact Agent</h3>
+            <p>Interested in this property? Reach out for more details or to schedule a viewing.</p>
+
+            <div class="agent-info">
+              <img src="images/logo.png" alt="Agent logo">
+              <div>
+                <h4>Trinity CW</h4>
+                <p>Premium Real Estate</p>
+              </div>
+            </div>
+
+            <a href="tel:+2340000000000" class="agent-btn">Call Now</a>
+            <a href="mailto:info@trinitycw.com" class="agent-btn secondary">Send Email</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="imageLightbox" class="image-lightbox">
+    <div class="image-lightbox-overlay" id="imageLightboxOverlay"></div>
+
+    <div class="image-lightbox-content">
+      <button type="button" class="image-lightbox-close" id="closeLightbox" aria-label="Close image">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <img id="lightboxImage" src="" alt="Full property image">
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Trinity CW</h3>
+        <p>Premium real estate solutions tailored for modern living.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Lagos, Nigeria</p>
+        <p>+234 802 678 9221</p>
+        <p>trinitycwhomes@gmail.com</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="https://wa.me/2349030106001"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://x.com/trinity_CW1"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/share/17D8pCnuFG/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Trinity CW. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <a id="whatsappBtn" target="_blank" class="whatsapp-btn">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>

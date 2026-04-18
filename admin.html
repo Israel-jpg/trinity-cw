@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Property | Trinity CW</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="images/logo.png" alt="Trinity CW Logo">
+        <span>Trinity CW</span>
+      </div>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
+
+        <button id="logoutBtn" class="nav-logout-btn" type="button">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <main class="admin-page">
+    <section class="properties-hero">
+      <div class="container">
+        <p class="page-label">Admin Panel</p>
+        <h1>Add New Property</h1>
+        <p class="page-subtext">
+          Create a new property listing and upload an image directly from your device.
+        </p>
+      </div>
+    </section>
+
+    <section class="admin-section">
+      <div class="container">
+        <div class="admin-card">
+          <form id="adminPropertyForm" class="admin-form" enctype="multipart/form-data">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Property Name</label>
+                <input type="text" id="name" placeholder="e.g. Luxury Duplex" required>
+              </div>
+
+              <div class="form-group">
+                <label for="location">Location</label>
+                <input type="text" id="location" placeholder="e.g. Lekki, Lagos" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="listing">Listing Type</label>
+                <select id="listing" required>
+                  <option value="">Select listing type</option>
+                  <option value="sale">For Sale</option>
+                  <option value="rent">For Rent</option>
+                  <option value="shortlet">Shortlet</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="type">Property Type</label>
+                <select id="type" required>
+                  <option value="">Select property type</option>
+                  <option value="apartment">Apartment</option>
+                  <option value="duplex">Duplex</option>
+                  <option value="home">Home</option>
+                  <option value="land">Land</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" id="price" placeholder="e.g. 85000000" required>
+              </div>
+
+              <div class="form-group">
+                <label for="size">Size</label>
+                <input type="text" id="size" placeholder="e.g. 3200 sqft">
+              </div>
+            </div>
+
+            <div class="form-row" id="propertyRoomsRow">
+              <div class="form-group" id="bedroomsGroup">
+                <label for="bedrooms">Bedrooms</label>
+                <input type="number" id="bedrooms" min="0" placeholder="e.g. 4">
+              </div>
+
+              <div class="form-group" id="bathroomsGroup">
+                <label for="bathrooms">Bathrooms</label>
+                <input type="number" id="bathrooms" min="0" placeholder="e.g. 5">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="image">Property Image</label>
+              <input type="file" id="image" accept="image/*" multiple required>
+              <div id="imagePreviewWrap" class="image-preview-wrap"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea id="description" rows="5" placeholder="Enter property description"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="parking">Parking</label>
+              <textarea id="parking" rows="2" placeholder="e.g. 2 cars"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="interior">Interior</label>
+              <textarea id="interior" rows="3" placeholder="Describe the interior features"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="exterior">Exterior</label>
+              <textarea id="exterior" rows="3" placeholder="Describe the exterior features"></textarea>
+            </div>
+
+            <div class="form-check">
+              <input type="checkbox" id="featured">
+              <label for="featured">Mark as featured property</label>
+            </div>
+
+            <button type="submit" class="agent-btn">Add Property</button>
+            <p id="adminFormMessage" class="admin-form-message"></p>
+
+          </form>
+        </div>
+
+        <div class="admin-list-wrap">
+          <div class="admin-list-header">
+            <h3>Existing Properties</h3>
+            <p>Manage the listings already saved in your database.</p>
+          </div>
+
+          <div class="admin-search-box">
+            <input
+              type="text"
+              id="propertySearch"
+              placeholder="Search property by name..."
+            />
+            <button id="searchBtn" type="button">Search</button>
+          </div>
+
+          <div id="adminPropertiesList" class="admin-properties-list"></div>
+        </div>
+
+        <div class="admin-list-wrap">
+          <div class="admin-list-header">
+            <h3>Customer Inquiries</h3>
+            <p>Messages submitted through the contact form will appear here.</p>
+          </div>
+
+          <div id="adminInquiriesList" class="admin-properties-list">
+            <p>Loading inquiries...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Trinity CW</h3>
+        <p>Premium real estate solutions tailored for modern living.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Lagos, Nigeria</p>
+        <p>+234 802 678 9221</p>
+        <p>trinitycwhomes@gmail.com</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="https://wa.me/2349030106001" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a href="https://x.com/trinity_CW1" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.facebook.com/share/17D8pCnuFG/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Trinity CW. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="editModal" class="edit-modal">
+    <div class="edit-modal-backdrop" id="editModalBackdrop"></div>
+
+    <div class="edit-modal-content">
+      <button type="button" class="edit-modal-close" id="closeEditModal">
+        <i class="fas fa-times"></i>
+      </button>
+
+      <div class="edit-modal-header">
+        <p class="page-label">Admin Panel</p>
+        <h3>Edit Property</h3>
+        <p>Update the selected property without leaving this page.</p>
+      </div>
+
+      <form id="editPropertyForm" class="admin-form" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="editName">Property Name</label>
+            <input type="text" id="editName" placeholder="e.g. Luxury Duplex" required>
+          </div>
+
+          <div class="form-group">
+            <label for="editLocation">Location</label>
+            <input type="text" id="editLocation" placeholder="e.g. Lekki, Lagos" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="editListing">Listing Type</label>
+            <select id="editListing" required>
+              <option value="">Select listing type</option>
+              <option value="sale">For Sale</option>
+              <option value="rent">For Rent</option>
+              <option value="shortlet">Shortlet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="editType">Property Type</label>
+            <select id="editType" required>
+              <option value="">Select property type</option>
+              <option value="apartment">Apartment</option>
+              <option value="duplex">Duplex</option>
+              <option value="home">Home</option>
+              <option value="land">Land</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="editPrice">Price</label>
+            <input type="number" id="editPrice" placeholder="e.g. 85000000" required>
+          </div>
+
+          <div class="form-group">
+            <label for="editSize">Size</label>
+            <input type="text" id="editSize" placeholder="e.g. 3200 sqft">
+          </div>
+        </div>
+
+        <div class="form-row" id="editPropertyRoomsRow">
+          <div class="form-group" id="editBedroomsGroup">
+            <label for="editBedrooms">Bedrooms</label>
+            <input type="number" id="editBedrooms" min="0" placeholder="e.g. 4">
+          </div>
+
+          <div class="form-group" id="editBathroomsGroup">
+            <label for="editBathrooms">Bathrooms</label>
+            <input type="number" id="editBathrooms" min="0" placeholder="e.g. 5">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="editImage">Property Images</label>
+          <input type="file" id="editImage" accept="image/*" multiple>
+          <div id="editImagePreviewWrap" class="image-preview-wrap"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="editDescription">Description</label>
+          <textarea id="editDescription" rows="5" placeholder="Enter property description"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="editParking">Parking</label>
+          <textarea id="editParking" rows="2" placeholder="e.g. 2 cars"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="editInterior">Interior</label>
+          <textarea id="editInterior" rows="3" placeholder="Describe the interior features"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="editExterior">Exterior</label>
+          <textarea id="editExterior" rows="3" placeholder="Describe the exterior features"></textarea>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" id="editFeatured">
+          <label for="editFeatured">Mark as featured property</label>
+        </div>
+
+        <div class="edit-modal-actions">
+          <button type="button" class="agent-btn secondary-btn" id="cancelEditModal">Cancel</button>
+          <button type="submit" class="agent-btn">Save Changes</button>
+        </div>
+
+        <p id="editFormMessage" class="admin-form-message"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

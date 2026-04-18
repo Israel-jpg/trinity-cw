@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Trinity CW</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="images/logo.png" alt="Trinity CW Logo">
+        <span>Trinity CW</span>
+      </div>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <main class="contact-page">
+    <section class="contact-hero reveal">
+      <div class="container">
+        <p class="page-label">Contact Trinity CW</p>
+        <h1>Get in Touch with Us</h1>
+        <p class="page-subtext">
+          Have questions about a listing or need help with your property search?
+          Reach out to us and our team will be happy to assist.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container contact-grid">
+
+        <div class="contact-form-card reveal">
+          <h2>Send Us a Message</h2>
+          <p>Fill in your details and we’ll get back to you as soon as possible.</p>
+
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="emailAddress">Email Address</label>
+              <input type="email" id="emailAddress" placeholder="Enter your email address">
+            </div>
+
+            <div class="form-group">
+              <label for="phoneNumber">Phone Number</label>
+              <input type="text" id="phoneNumber" placeholder="Enter your phone number">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" rows="6" placeholder="Tell us how we can help"></textarea>
+            </div>
+
+            <button type="submit" class="agent-btn">Send Message</button>
+            <p id="contactFormMessage" class="admin-form-message"></p>
+          </form>
+        </div>
+
+        <div class="contact-info-card reveal">
+          <h2>Contact Information</h2>
+          <p>Reach us directly through any of the channels below.</p>
+
+          <div class="contact-info-list">
+            <div class="contact-info-item reveal">
+              <i class="fas fa-location-dot"></i>
+              <div>
+                <h4>Office Address</h4>
+                <p>Lagos, Nigeria</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item reveal">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Phone</h4>
+                <p>+234 802 678 9221</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item reveal">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>trinitycwhomes@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Trinity CW</h3>
+        <p>Premium real estate solutions tailored for modern living.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="properties.html">Properties</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p>Lagos, Nigeria</p>
+        <p>+234 802 678 9221</p>
+        <p>trinitycwhomes@gmail.com</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Follow Us</h4>
+        <div class="socials">
+          <a href="https://wa.me/2349030106001"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://x.com/trinity_CW1"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.facebook.com/share/17D8pCnuFG/?mibextid=wwXIfr"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Trinity CW. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
