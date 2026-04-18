@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const API_BASE_URL = 'https://trinity-cw-backend.onrender.com';
+  const API_BASE_URL = 'https://trinity-cw-backend.onrender.com/api';
 
   // =========================
   // HELPERS
